@@ -1,0 +1,30 @@
+{
+  "features": [
+    "Click_PN",
+    "Click_Cards",
+    "Cash_In",
+    "Top_Up__Amount",
+    "Payment_or_Not",
+    "Product_Amount",
+    "Media_Source_Paid",
+    "KYC_Preffered",
+    "Product_Payment_Mobile & Telco",
+    "Product_Payment_Multifinance",
+    "Product_Payment_Online Payment",
+    "Product_Payment_Other Bills",
+    "Product_Payment_QR Payment",
+    "Product_Payment_Transfer",
+    "Product_Payment_Unknown",
+    "Product_Payment_Utilities",
+    "Engagement_Score",
+    "Total_Transaction_Amount",
+    "Register_Weekday"
+  ],
+  "tier_cuts": [
+    0.3253,
+    0.4116,
+    0.821
+  ],
+  "test_roc_auc": 0.7828,
+  "trained_on": "synthetic_new_users.csv (synthetic data)"
+}
