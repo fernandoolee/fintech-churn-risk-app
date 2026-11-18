@@ -68,10 +68,13 @@ out["Risk_Tier"] = risk_tier(proba, meta["tier_cuts"])
 counts = out["Risk_Tier"].value_counts().reindex(TIERS, fill_value=0)
 cols = st.columns(4)
 for col, tier in zip(cols, TIERS):
-    col.metric(f"{tier} risk", f"{counts[tier]:,}", f"{counts[tier] / len(out):.0%} of users", delta_color="off")
+    col.metric(f"{tier} risk", f"{counts[tier]:,}")
+    col.caption(f"{counts[tier] / len(out):.0%} of users")
 
 st.subheader("Users by risk tier")
-st.bar_chart(counts)
+# number the tiers so the chart keeps the Low -> Very high order instead of sorting alphabetically
+chart = pd.DataFrame({"Users": counts.values}, index=[f"{i + 1}. {t}" for i, t in enumerate(TIERS)])
+st.bar_chart(chart, x_label="Risk tier", y_label="Users")
 
 st.subheader("Highest-risk users")
 st.dataframe(out.sort_values("Uninstall_Probability", ascending=False).head(20), width="stretch")

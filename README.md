@@ -1,5 +1,7 @@
 # Fintech New-User Churn Risk (Streamlit app)
 
+**Live app:** https://churn-prediction-xai-digital-wallet.streamlit.app/
+
 Upload a CSV of new digital-wallet users and get, for each user, the **probability of uninstalling within 30 days** and a **risk tier** (Low / Medium / High / Very high) with suggested CRM actions.
 
 The method comes from my IEEE paper:
